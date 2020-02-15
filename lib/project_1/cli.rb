@@ -8,21 +8,21 @@ class Project1::CLI
   
   def list_days
     puts "This Week's Forecast:"
-    @deals = DailyDeal::Deal.today
-    @deals.each.with_index(1) do |deal, i|
-      puts "#{i}. #{deal.name} - #{deal.price} - #{deal.availability}"
+    @days = DailyDeal::Deal.today
+    @days.each.with_index(1) do |day, i|
+      puts "#{i}. #{day.name} - #{day.low} - #{day.high}"
     end
   end
   
   def menu
     input = nil
     while input != "exit"
-      puts "Enter the number of the deal you'd like more info on or type list to see the deals again or type exit:"
+      puts "Enter the number of the day you'd like more info on, type list to see the days again or type exit:"
       input = gets.strip.downcase
 
       if input.to_i > 0
-        the_deal = @deals[input.to_i-1]
-        puts "#{the_deal.name} - #{the_deal.price} - #{the_deal.availability}"
+        the_deal = @days[input.to_i-1]
+        puts "#{i}. #{day.name} - #{day.low} - #{day.high}"
       elsif input == "list"
         list_days
       else
