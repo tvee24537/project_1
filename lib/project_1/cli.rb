@@ -8,7 +8,7 @@ class Project1::CLI
   
   def list_days
     puts "This Week's Forecast:"
-    @days = DailyDeal::Deal.today
+    @days = Project1::Forecast.today
     @days.each.with_index(1) do |day, i|
       puts "#{i}. #{day.name} - #{day.low} - #{day.high}"
     end
@@ -21,8 +21,8 @@ class Project1::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
-        the_deal = @days[input.to_i-1]
-        puts "#{i}. #{day.name} - #{day.low} - #{day.high}"
+        the_days = @days[input.to_i-1]
+        puts "#{the_days.name} - #{the_days.low} - #{the_days.high}"
       elsif input == "list"
         list_days
       else
