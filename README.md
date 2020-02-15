@@ -1,6 +1,6 @@
 # Weather Checker
 
-  This gem is made with intention of scraping the NOAA website for weather forecast information. 
+This gem is made with intention of scraping the NOAA website for weather forecast information on the current week.
   
 ## Prerequisites
 
@@ -24,7 +24,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+A user will be given a choice of days in a week and then get detailed information about their choice. 
 
 ## Development
 
