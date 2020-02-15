@@ -1,5 +1,5 @@
-class DailyDeal::Deal
-  attr_accessor :day, :low, :high, :precipitation, :url
+class Project1::Forecast
+  attr_accessor :name, :low, :high, :precipitation
   
   def self.today
     # Scrape NOAA.gov for forecast inforamtion for current week.
@@ -16,15 +16,15 @@ class DailyDeal::Deal
 
   def self.scrape_woot
     #scrap function to scrape from NOAA
-#    doc = Nokogiri::HTML(open("https://woot.com"))
+    doc = Nokogiri::HTML(open("https://f1.weather.gov/MapClick.php?lat=38.8988&lon=-77.0365#.Xkh1O2hKiUl"))
 
-#    deal = self.new
-#    deal.name = doc.search("h2.main-title").text.strip
-#    deal.price = doc.search("#todays-deal span.price").text.strip
-#    deal.url = doc.search("a.wantone").first.attr("href").strip
-#    deal.availability = true
+    day = self.new
+#    day.name = doc.search("h2.main-title").text.strip
+#    day.low = doc.search("#todays-deal span.price").text.strip
+#    day.high = doc.search("a.wantone").first.attr("href").strip
+#    day.precipitation = true
 
-#    deal
+#    day
   end
 end
 
