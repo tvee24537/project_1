@@ -14,17 +14,23 @@ class Project1::Forecast
     days
   end
 
-  def self.scrape_woot
+  def self.scrape_NOAA
     #scrap function to scrape from NOAA
     doc = Nokogiri::HTML(open("https://f1.weather.gov/MapClick.php?lat=38.8988&lon=-77.0365#.Xkh1O2hKiUl"))
 
     day = self.new
+    day.name = "place holder"
+    day.low = "place holder"
+    day.high = "place holder"
+    day.precipitation = "place holder"
+    
+    
 #    day.name = doc.search("h2.main-title").text.strip
 #    day.low = doc.search("#todays-deal span.price").text.strip
 #    day.high = doc.search("a.wantone").first.attr("href").strip
-#    day.precipitation = true
+#    day.precipitation = doc.search("a.wantone").first.attr("href").strip
 
-#    day
+    day
   end
 end
 
