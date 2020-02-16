@@ -1,18 +1,28 @@
 class Project1::Forecast
   attr_accessor :name, :temp, :condition
   
+  @@url = "https://f1.weather.gov/MapClick.php?lat=38.8988&lon=-77.0365#.XkmfdmhKiUl"
+  
   def self.today
     # Scrape weather.gov for forecast inforamtion for current week and storing it in the days array.
     days = []
 
-    days << self.scrape_cast
+    days << self.scrape_cast1
+    #days << self.scrape_cast2
+    #days << self.scrape_cast3
+    #days << self.scrape_cast4
+    #days << self.scrape_cast5
+    #days << self.scrape_cast6
+    #days << self.scrape_cast7
+    #days << self.scrape_cast8
+    #days << self.scrape_cast9
 
     days
   end
 
-  def self.scrape_cast
+  def self.scrape_cast1
     #scrap function to scrape from weather.gov
-    doc = Nokogiri::HTML(open("https://f1.weather.gov/MapClick.php?lat=38.8988&lon=-77.0365#.XkmfdmhKiUl"))
+    doc = Nokogiri::HTML(open(@@url))
     
     day = self.new
     
