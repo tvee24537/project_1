@@ -12,7 +12,7 @@ class Project1::Forecast
 
   def self.scrape_cast
     #scrap function to scrape from Accuweather
-    doc = Nokogiri::HTML(open("https://www.accuweather.com/en/us/washington/20006/daily-weather-forecast"))
+    doc = Nokogiri::HTML(open("https://www.accuweather.com/en/us/washington/20006/"))
     binding.pry
     
     
