@@ -1,25 +1,25 @@
 class Project1::Forecast
-  attr_accessor :name, :low, :high, :precipitation
+  attr_accessor :name, :low, :high, :condition
   
   def self.today
-    # Scrape NOAA.gov for forecast inforamtion for current week.
+    # Scrape Accuweather.com for forecast inforamtion for current week.
     days = []
 
-    days << self.scrape_NOAA
+    days << self.scrape_cast
 
     days
   end
 
-  def self.scrape_NOAA
-    #scrap function to scrape from NOAA
-    doc = Nokogiri::HTML(open("https://forecast.weather.gov/MapClick.php?lat=38.898750000000064&lon=-77.03654499999999#.Xkh-9GhKiUk"))
+  def self.scrape_cast
+    #scrap function to scrape from Accuweather
+    doc = Nokogiri::HTML(open("https://www.accuweather.com/en/us/washington/20006/daily-weather-forecast"))
     binding.pry
     
     
 #    day.name = doc.search("h2.main-title").text.strip
 #    day.low = doc.search("#todays-deal span.price").text.strip
 #    day.high = doc.search("a.wantone").first.attr("href").strip
-#    day.precipitation = doc.search("a.wantone").first.attr("href").strip
+#    day.condition = doc.search("a.wantone").first.attr("href").strip
 
 #    day
   end

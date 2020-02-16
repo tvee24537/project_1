@@ -32,7 +32,7 @@ class Project1::CLI
   end
 
   def goodbye
-    puts "See you later for more forecast!"
+    puts "See you later for the next forecast!"
   end  
   
 end
