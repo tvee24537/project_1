@@ -1,6 +1,6 @@
 # Weather Checker
 
-This gem is made with intention of scraping the NOAA website for weather forecast information of Washington D.C. on the current week.
+This gem is made with intention of scraping the NOAA website weather.gov for weather forecast information of Washington D.C. on the current week.
   
 ## Prerequisites
 

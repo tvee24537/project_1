@@ -2,7 +2,7 @@ class Project1::Forecast
   attr_accessor :name, :temp, :condition
   
   def self.today
-    # Scrape Accuweather.com for forecast inforamtion for current week.
+    # Scrape weather.gov for forecast inforamtion for current week.
     days = []
 
     days << self.scrape_cast
@@ -11,8 +11,10 @@ class Project1::Forecast
   end
 
   def self.scrape_cast
-    #scrap function to scrape from Accuweather
+    #scrap function to scrape from weather.gov
     doc = Nokogiri::HTML(open("https://f1.weather.gov/MapClick.php?lat=38.8988&lon=-77.0365#.XkmfdmhKiUl"))
+    
+    day = self.new
     
     day.name1 = doc.search("p")[8].text
     day.name2 = doc.search("p")[12].text
