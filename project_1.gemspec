@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["'t.veerakajorn@gmail.com'"]
 
   spec.summary       = "This gem is made with intention of scraping the NOAA website for weather forecast information of Washington D.C. on the current week."
-  spec.homepage      = https://github.com/tvee24537/project_1.git
+  spec.homepage      = "https://github.com/tvee24537/project_1.git"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -19,8 +19,8 @@ Gem::Specification.new do |spec|
     spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = https://github.com/tvee24537/project_1.git
-    spec.metadata["changelog_uri"] = https://github.com/tvee24537/project_1.git
+    spec.metadata["source_code_uri"] = "https://github.com/tvee24537/project_1.git"
+    spec.metadata["changelog_uri"] = "https://github.com/tvee24537/project_1.git"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
@@ -37,8 +37,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec"
   spec.add_development_dependency "pry"
-  
   spec.add_dependency "nokogiri"
 end
