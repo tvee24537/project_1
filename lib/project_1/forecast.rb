@@ -27,17 +27,9 @@ class Project1::Forecast
     day = self.new
     
     day.name = doc.search("p")[8].text
-    day.name = doc.search("p")[12].text
-    day.name = doc.search("p")[16].text
-    day.name = doc.search("p")[20].text
-    day.name = doc.search("p")[24].text
-    day.name = doc.search("p")[28].text
-    day.name = doc.search("p")[32].text
-    day.name = doc.search("p")[36].text
-    day.name = doc.search("p")[40].text
     
     day.condition = doc.search("p")[10].text
-    day.condition = doc.search("p")[14].text
+
     day.condition = doc.search("p")[18].text
     day.condition = doc.search("p")[22].text
     day.condition = doc.search("p")[26].text
@@ -48,7 +40,7 @@ class Project1::Forecast
 
     
     day.temp = doc.search("p")[11].text
-    day.temp = doc.search("p")[15].text
+    
     day.temp = doc.search("p")[19].text
     day.temp = doc.search("p")[23].text
     day.temp = doc.search("p")[27].text
@@ -64,6 +56,75 @@ class Project1::Forecast
 
     day
   end
+  
+  def self.scrape_cast2
+    doc = Nokogiri::HTML(open(@@url))
+    
+    day = self.new
+    day.name = doc.search("p")[12].text
+    day.condition = doc.search("p")[14].text
+    day.temp = doc.search("p")[15].text
+    day
+  end
+  
+  def self.scrape_cast3
+    doc = Nokogiri::HTML(open(@@url))
+    
+    day = self.new
+    day.name = doc.search("p")[16].text
+    day
+  end
+  
+  def self.scrape_cast4
+    doc = Nokogiri::HTML(open(@@url))
+    
+    day = self.new
+    day.name = doc.search("p")[20].text
+    day
+  end
+  
+  def self.scrape_cast5
+    doc = Nokogiri::HTML(open(@@url))
+    
+    day = self.new
+    day.name = doc.search("p")[24].text
+    day
+  end
+  
+  def self.scrape_cast6
+    doc = Nokogiri::HTML(open(@@url))
+    
+    day = self.new
+    day.name = doc.search("p")[28].text
+    day
+  end
+  
+  def self.scrape_cast7
+    doc = Nokogiri::HTML(open(@@url))
+    
+    day = self.new
+    day.name = doc.search("p")[32].text
+    day
+  end
+    
+  def self.scrape_cast8
+    doc = Nokogiri::HTML(open(@@url))
+    
+    day = self.new
+    day.name = doc.search("p")[36].text
+    day
+  end
+  
+  def self.scrape_cast9
+    doc = Nokogiri::HTML(open(@@url))
+    
+    day = self.new
+    day.name = doc.search("p")[40].text
+    day
+  end
+  
+  
+  
 end
 
 
