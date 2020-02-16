@@ -8,14 +8,14 @@ class Project1::Forecast
     days = []
 
     days << self.scrape_cast1
-    #days << self.scrape_cast2
-    #days << self.scrape_cast3
-    #days << self.scrape_cast4
-    #days << self.scrape_cast5
-    #days << self.scrape_cast6
-    #days << self.scrape_cast7
-    #days << self.scrape_cast8
-    #days << self.scrape_cast9
+    days << self.scrape_cast2
+    days << self.scrape_cast3
+    days << self.scrape_cast4
+    days << self.scrape_cast5
+    days << self.scrape_cast6
+    days << self.scrape_cast7
+    days << self.scrape_cast8
+    days << self.scrape_cast9
 
     days
   end
@@ -27,29 +27,9 @@ class Project1::Forecast
     day = self.new
     
     day.name = doc.search("p")[8].text
-    
     day.condition = doc.search("p")[10].text
-
-    day.condition = doc.search("p")[18].text
-    day.condition = doc.search("p")[22].text
-    day.condition = doc.search("p")[26].text
-    day.condition = doc.search("p")[30].text
-    day.condition = doc.search("p")[34].text
-    day.condition = doc.search("p")[38].text
-    day.condition = doc.search("p")[42].text
-
-    
     day.temp = doc.search("p")[11].text
-    
-    day.temp = doc.search("p")[19].text
-    day.temp = doc.search("p")[23].text
-    day.temp = doc.search("p")[27].text
-    day.temp = doc.search("p")[31].text
-    day.temp = doc.search("p")[35].text
-    day.temp = doc.search("p")[39].text
-    day.temp = doc.search("p")[43].text
-    
-    
+
 #    day.name = doc.search("h2.main-title").text.strip
 #    day.temp = doc.search("a.wantone").first.attr("href").strip
 #    day.condition = doc.search("a.wantone").first.attr("href").strip
@@ -72,6 +52,8 @@ class Project1::Forecast
     
     day = self.new
     day.name = doc.search("p")[16].text
+    day.condition = doc.search("p")[18].text
+    day.temp = doc.search("p")[19].text
     day
   end
   
@@ -80,6 +62,8 @@ class Project1::Forecast
     
     day = self.new
     day.name = doc.search("p")[20].text
+    day.condition = doc.search("p")[22].text
+    day.temp = doc.search("p")[23].text
     day
   end
   
@@ -88,6 +72,8 @@ class Project1::Forecast
     
     day = self.new
     day.name = doc.search("p")[24].text
+    day.condition = doc.search("p")[26].text
+    day.temp = doc.search("p")[27].text
     day
   end
   
@@ -96,6 +82,8 @@ class Project1::Forecast
     
     day = self.new
     day.name = doc.search("p")[28].text
+    day.condition = doc.search("p")[30].text
+    day.temp = doc.search("p")[31].text
     day
   end
   
@@ -104,6 +92,8 @@ class Project1::Forecast
     
     day = self.new
     day.name = doc.search("p")[32].text
+    day.condition = doc.search("p")[34].text
+    day.temp = doc.search("p")[35].text
     day
   end
     
@@ -112,6 +102,8 @@ class Project1::Forecast
     
     day = self.new
     day.name = doc.search("p")[36].text
+    day.condition = doc.search("p")[38].text
+    day.temp = doc.search("p")[39].text
     day
   end
   
@@ -120,11 +112,10 @@ class Project1::Forecast
     
     day = self.new
     day.name = doc.search("p")[40].text
+    day.condition = doc.search("p")[42].text
+    day.temp = doc.search("p")[43].text
     day
   end
-  
-  
-  
 end
 
 
