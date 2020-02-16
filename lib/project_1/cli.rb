@@ -20,7 +20,7 @@ class Project1::CLI
       puts "Enter the number of the day you'd like more info on, type list to see the days again or type exit:"
       input = gets.strip.downcase
 
-      if input.to_i > 0
+      if input.to_i > 0 && input.to_i <= 9
         the_days = @days[input.to_i-1]
         puts "#{the_days.name} - #{the_days.temp} - #{the_days.condition}"
       elsif input == "list"
