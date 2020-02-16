@@ -1,10 +1,12 @@
 class Project1::Forecast
+  #Starts with day name, temperature, and day condition
   attr_accessor :name, :temp, :condition
   
+  #URL for forecast over area zip code 20500, White House, the middle of Washington D.C. 
   @@url = "https://f1.weather.gov/MapClick.php?lat=38.8988&lon=-77.0365#.XkmfdmhKiUl"
   
   def self.today
-    # Scrape weather.gov for forecast inforamtion for current week and storing it in the days array.
+    #store scraped information in the days array.
     days = []
 
     days << self.scrape_cast1
@@ -19,9 +21,8 @@ class Project1::Forecast
 
     days
   end
-
+#scrape method to scrape from weather.gov 
   def self.scrape_cast1
-    #scrap function to scrape from weather.gov
     doc = Nokogiri::HTML(open(@@url))
     
     day = self.new
