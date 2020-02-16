@@ -3,10 +3,6 @@ class Project1::Forecast
   
   def self.today
     # Scrape NOAA.gov for forecast inforamtion for current week.
-    self.scrape_forecasts
-  end
-
-  def self.scrape_forecasts
     days = []
 
     days << self.scrape_NOAA
@@ -16,7 +12,7 @@ class Project1::Forecast
 
   def self.scrape_NOAA
     #scrap function to scrape from NOAA
-    doc = Nokogiri::HTML(open("https://forecast.weather.gov/"))
+    doc = Nokogiri::HTML(open("https://forecast.weather.gov/MapClick.php?lat=38.898750000000064&lon=-77.03654499999999#.Xkh-9GhKiUk"))
     binding.pry
     
     
