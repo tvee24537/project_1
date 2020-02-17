@@ -21,7 +21,9 @@ class Project1::Forecast
 
     days
   end
+  
 #scrape method to scrape from weather.gov 
+  #using Nokogiri to turn the site into ruby objects and selecting the information that is needed.
   def self.scrape_cast1
     doc = Nokogiri::HTML(open(@@url))
     
@@ -29,6 +31,7 @@ class Project1::Forecast
     day.name = doc.search("p")[8].text
     day.condition = doc.search("p")[10].text
     day.temp = doc.search("p")[11].text
+    
     day
   end
   
@@ -39,6 +42,7 @@ class Project1::Forecast
     day.name = doc.search("p")[12].text
     day.condition = doc.search("p")[14].text
     day.temp = doc.search("p")[15].text
+    
     day
   end
   
@@ -49,6 +53,7 @@ class Project1::Forecast
     day.name = doc.search("p")[16].text
     day.condition = doc.search("p")[18].text
     day.temp = doc.search("p")[19].text
+    
     day
   end
   
@@ -59,6 +64,7 @@ class Project1::Forecast
     day.name = doc.search("p")[20].text
     day.condition = doc.search("p")[22].text
     day.temp = doc.search("p")[23].text
+    
     day
   end
   
@@ -69,6 +75,7 @@ class Project1::Forecast
     day.name = doc.search("p")[24].text
     day.condition = doc.search("p")[26].text
     day.temp = doc.search("p")[27].text
+    
     day
   end
   
@@ -79,6 +86,7 @@ class Project1::Forecast
     day.name = doc.search("p")[28].text
     day.condition = doc.search("p")[30].text
     day.temp = doc.search("p")[31].text
+    
     day
   end
   
@@ -89,6 +97,7 @@ class Project1::Forecast
     day.name = doc.search("p")[32].text
     day.condition = doc.search("p")[34].text
     day.temp = doc.search("p")[35].text
+    
     day
   end
     
@@ -99,6 +108,7 @@ class Project1::Forecast
     day.name = doc.search("p")[36].text
     day.condition = doc.search("p")[38].text
     day.temp = doc.search("p")[39].text
+    
     day
   end
   
@@ -109,6 +119,7 @@ class Project1::Forecast
     day.name = doc.search("p")[40].text
     day.condition = doc.search("p")[42].text
     day.temp = doc.search("p")[43].text
+    
     day
   end
 end

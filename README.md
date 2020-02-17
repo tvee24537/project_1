@@ -1,6 +1,8 @@
 # Weather Checker
 
 This gem is made with intention of scraping the NOAA website weather.gov for weather forecast information of Washington D.C. on the current week.
+The area used is the White House with the zip code of 20500, it is in the center of D.C.
+The information of the website used is in the panel under current conditions at: Washington/Reagan National Airport, DC (KDCA) with Lat: 38.85°N, Lon: 77.03°W, and Elevation: 13ft.
   
 ## Prerequisites
 
