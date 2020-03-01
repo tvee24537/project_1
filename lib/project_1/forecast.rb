@@ -1,4 +1,4 @@
-require_relative './scraper.rb'
+require_relative './project_1/scraper.rb'
 
 class Project1::Forecast
   #Starts with day name, temperature, and day condition
