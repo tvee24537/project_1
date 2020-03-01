@@ -18,7 +18,9 @@ class Project1::Forecast
     @@all
   end
   
-  def 
+  def self.today
+    self.all.each do |cast|
+      if 
   
   def self.today
     #store scraped information in the days array.
