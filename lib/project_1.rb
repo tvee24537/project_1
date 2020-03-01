@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'nokogiri'
+require 'pry'
 
 require_relative "./project_1/version"
 require_relative './project_1/forecast'
