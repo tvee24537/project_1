@@ -2,6 +2,8 @@ class Scraper
   
   attr_accessor :name, :temp, :condition
   
+  @@day = []
+  
   url = "https://f1.weather.gov/MapClick.php?lat=38.8988&lon=-77.0365#.XkmfdmhKiUl"
   
   def initialize(name, temp, condition)
@@ -11,6 +13,9 @@ class Scraper
     @@day << self
   end
     
+  def self.all  
+    @@all
+  end
   
   def self.scrape_cast1
     doc = Nokogiri::HTML(open(@@url))
