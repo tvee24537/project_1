@@ -2,8 +2,23 @@ class Project1::Forecast
   #Starts with day name, temperature, and day condition
   attr_accessor :name, :temp, :condition
   
+  @days = []
+  
   #URL for forecast over area zip code 20500, White House, the middle of Washington D.C. 
   @@url = "https://f1.weather.gov/MapClick.php?lat=38.8988&lon=-77.0365#.XkmfdmhKiUl"
+  
+  def initialize(name, temp, condition)
+    @name = name
+    @temp = temp
+    @condition = condition
+    @days << self
+  end
+    
+  def self.all  
+    @@all
+  end
+  
+  def 
   
   def self.today
     #store scraped information in the days array.
