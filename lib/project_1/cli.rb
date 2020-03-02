@@ -3,6 +3,7 @@ class Project1::CLI
   #Guider method, gem will run in 3 parts mentioned under the forecast method.
   def forecast
     list_days
+    
     menu
     goodbye
   end
@@ -12,7 +13,7 @@ class Project1::CLI
     puts "This Week's Forecast:"
 
     Scraper.scrape_cast    
-    
+
     days = Project1::Forecast.all
     days.each.with_index(1) do |day, i|
       puts "#{i}. #{day.name}"
@@ -26,8 +27,8 @@ class Project1::CLI
       puts "Enter the number of the day you'd like more info on, type list to see the days again or type exit:"
       input = gets.strip.downcase
       #input can only be from 1-9 because there's only 9 scraper methods currently.
-      if input.to_i > 0 && input.to_i <= 9   
-        the_days = @days[input.to_i-1]
+      if input.to_i > 0 && input.to_i <= Project1::Forecast.all.length
+        the_days = Project1::Forecast.all[input.to_i-1]
         puts "#{the_days.name} - #{the_days.temp} - #{the_days.condition}"
       elsif input == "list"
         list_days

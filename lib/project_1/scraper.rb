@@ -1,30 +1,14 @@
 class Scraper
     
-  #def self.scrape_cast
-    #url = Nokogiri::HTML(open("https://f1.weather.gov/MapClick.php?lat=38.8988&lon=-77.0365#.XkmfdmhKiUl"))
-    #url.css("li.forecast-tombstone").collect do |scrape|
-    #binding.pry
-    
-    #day = self.new
-    #day.name = doc.search("p")[8].text
-    #day.condition = doc.search("p")[10].text
-    #day.temp = doc.search("p")[11].text
-    
-    #day
-    
-    #end
-  #end
-  
   def self.scrape_cast
     
-    
     doc = Nokogiri::HTML(open("https://f1.weather.gov/MapClick.php?lat=38.8988&lon=-77.0365#.XkmfdmhKiUl"))
-    stones = doc.css("tombstone-container")
+    stones = doc.css(".tombstone-container")
     stones.each do |stone|
       period = stone.css(".period-name").text
       desc = stone.css(".short-desc").text
       temp = stone.css(".temp").text
-      binding.pry
+      #binding.pry
       Project1::Forecast.new(period, temp, desc)
     end
   end
