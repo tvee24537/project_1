@@ -10,8 +10,11 @@ class Project1::CLI
   #This method will list out the days currently displayed on weather.gov with numbers in front.
   def list_days
     puts "This Week's Forecast:"
-    @days = Project1::Forecast.today
-    @days.each.with_index(1) do |day, i|
+
+    Scraper.scrape_cast    
+    
+    days = Project1::Forecast.all
+    days.each.with_index(1) do |day, i|
       puts "#{i}. #{day.name}"
     end
   end

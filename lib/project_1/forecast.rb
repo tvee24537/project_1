@@ -1,10 +1,11 @@
-require_relative './project_1/scraper.rb'
+require_relative './scraper.rb'
 
 class Project1::Forecast
   #Starts with day name, temperature, and day condition
   attr_accessor :name, :temp, :condition
   
-  @days = []
+#Refactoring starts here  
+  @@all = []
   
   #URL for forecast over area zip code 20500, White House, the middle of Washington D.C. 
 #  @@url = "https://f1.weather.gov/MapClick.php?lat=38.8988&lon=-77.0365#.XkmfdmhKiUl"
@@ -13,18 +14,15 @@ class Project1::Forecast
     @name = name
     @temp = temp
     @condition = condition
-    @days << self
+    @@all << self
   end
     
   def self.all  
     @@all
   end
   
-  def self.today
-    @days << self.scrape_cast
-    @days
-  end
-  
+# Refactoring ends here
+
 #  def self.today
     #store scraped information in the days array.
 #    days = []
@@ -142,4 +140,8 @@ class Project1::Forecast
     
     day
   end
+  
+  
+
+
 end
