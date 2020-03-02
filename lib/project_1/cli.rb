@@ -3,7 +3,6 @@ class Project1::CLI
   #Guider method, gem will run in 3 parts mentioned under the forecast method.
   def forecast
     list_days
-    
     menu
     goodbye
   end
@@ -15,7 +14,7 @@ class Project1::CLI
     Scraper.scrape_cast    
 
     days = Project1::Forecast.all
-    days.each.with_index(1) do |day, i|
+    days.map.with_index(1) do |day, i|
       puts "#{i}. #{day.name}"
     end
   end
